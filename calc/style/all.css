@@ -72,6 +72,7 @@ hr.row-spacer {
 	line-height:48px;
 }
 #calc-formula {
+	width: calc(100vw - ((100vw - 28px) / 4) - 46px);
 }
 #calc-opecode {
 	width: 20px;

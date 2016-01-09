@@ -78,18 +78,19 @@ var app = {
 		if (op != '') {
 			if (app.formula == '') {
 				app.formula = p;
+				p = v;
 			} else {
-				app.formula = eval(app.formula + ' ' + op + ' ' + p);
+				p = p + v;
 			}
+		}  else {
+			p = p + v;
 		}
-		p = v;
 		$r.text(p.replace(/(\d)(?=(\d{3})+$)/g , '$1,'));
 	},
 	ope: function(v) {
 		var $h = $(".history-list input:checked");
 		if ($h.size() == 0) {
 			$("#calc-opecode").text(v);
-			//app.formula = $("#calc-formula").text().replace(/,/g, '');
 		} else {
 			var $r = $h.parent();
 				var m = $r.size() - 1;
