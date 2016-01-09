@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<script src="jquery.js"></script>
+<title>HTML5サンプル</title>
+<style>
+.recommendBox {
+    position: absolute;
+    left: 0;
+    top: 0;
+    border: solid 1px lightgray;
+    background-color: snow;
+    width: 0;
+    padding: 0;
+    margin: 0;
+    display: none;
+}
+.recommendBox>li {
+    padding: 2px 4px;
+}
+.recommendBox>li:hover {
+    background-color: darkgray;
+    cursor: pointer;
+}
+.recommendBox>li:nth-child(even) {
+    background-color: seashell;
+}
+.recommendBox>li:nth-child(even):hover {
+    background-color: darkgray;
+    cursor: pointer;
+}
+.recommendBox>li+li {
+    border-top: solid 1px lightgray;
+}
+.recommendBox>li>a {
+    text-decoration: none;
+    color: darkblue;
+}
+</style>
+<script>
+var isMouseOnLinks = false;
+$(document).on("ready", function(){
+$(this).on("mousedown", function() {
+    if (!isMouseOnLinks) {
+        $("#links").hide();
+    }
+});
+$("#searchbox").on("keyup", function(evt) {
+    var $this = $(this), $target = $("#links");
+    $target.hide().empty();
+    if ($this.val() !== "") {
+        $.each(getLinkInfo($this.val()), function(index, value) {
+            $target.append($("<li><a href=\"" + value["href"] + "\">" + value["label"] + "</a></li>").on("click", function(){$(this).find("a")[0].click();}));
+        });
+        if ($target.children().length > 0) {
+            var pos = $this.position();
+            $target.css("width", $this.width()).css("left", pos.left).css("top", pos.top+$this.outerHeight()).show();
+        }
+    }
+});
+$("#links").on("mouseover", function() {
+    isMouseOnLinks = true;
+}).on("mouseout", function() {
+    isMouseOnLinks = false;
+});
+var getLinkInfo = function(key) {
+    var ret = "", data ={
+        abc: [{label:"link_a", href:"href_a"},{label:"link_b", href:"href_b"},{label:"link_c", href:"href_c"}],
+        def: [{label:"link_d", href:"href_d"},{label:"link_e", href:"href_e"},{label:"link_f", href:"href_f"}]
+    };
+    for (record in data) {
+        if (record.lastIndexOf(key, 0) === 0) {
+            ret = data[record];
+        }
+    }
+    return ret;
+};
+});
+</script>
+</head>
+<body>
+<form>
+<input type="search" id="searchbox" placeholder="search word" autocomplete=”off”><input type="button" value="search" onclick="alert('a');">
+</form>
+<br>
+キーワードとして登録しているのは「abc」「def」の２パターンのみです。<br>
+それぞれのキーワードに対して前方一致で検索して、一致すれば関連リンクをドロップダウンリストのようなイメージで表示します。<br>
+親子関係を持った多段の関連ワード表示も組むことは可能ですが、データ作りが面倒でやっていません。<br>
+やるとしても基本は表示位置の調整くらいで済むはずです。<br>
+<br>
+このサンプルではデータをスクリプト内部に持っているため、瞬時に返ってきますが、実際に運用する場合にはajaxでDB問い合わせするなどが<br>
+怒るかもしれません。そういった場合にはリクエストに行く回数が減るように検索に行く条件を調整（※）するなどを検討ください。<br>
+※既に検索してきたワードの続きになる場合はクライアント側で持っているデータしか使わないので、フィルタリングして不要分を非表示にするとか。<br>
+　削除ではなく非表示なのは、入力ミスなどだった場合に即時１文字削除などもあり得るため。その場合にも再検索に行かなくてもよくする手段です。
+<ul id="links" class="recommendBox"/>
+</body>
+</html>

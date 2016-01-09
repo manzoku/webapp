@@ -1,0 +1,14 @@
+#warning {
+	display: none;
+	font-weight: bold;
+	color: red;
+}
+#doneDeposit {
+	display: none;
+}
+#notyetStart {
+	display: none;
+}
+.ui-nullIcon {
+	background-image: none;
+}

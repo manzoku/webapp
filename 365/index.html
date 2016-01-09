@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>めざせ66795円！365日貯金</title>
+	<link rel="stylesheet" href="css/themes/365/365.min.css" />
+	<link rel="stylesheet" href="css/themes/default/jquery.mobile.structure-1.1.1.min.css" />
+	<link rel="stylesheet" href="css/application.css" />
+	<script src="js/jquery-1.7.1.min.js"></script>
+	<script src="js/application.js"></script>
+	<script src="js/jquery.mobile-1.1.1.min.js"></script>
+<!-- digidigiアクセス解析 -->
+<script src="http://analyzer1.digidigi.jp/analyze/js/analyze-sv1-62186402.js">
+</script>
+<script type="text/javascript">
+<!--
+var cid='62186402';
+set_script(cid);
+// -->
+</script>
+<noscript>
+<a href="http://www.digidigi.jp/">
+<img src="http://analyzer1.digidigi.jp/analyze/images/analyze-sv1-62186402.gif" border="0" width="50" height="20" />
+</a>
+</noscript>
+<!-- //digidigiアクセス解析 -->
+
+</head>
+<body>
+<div data-role="page" id="main">
+	<div data-role="header">
+		<h1>めざせ66795円！365日貯金</h1>
+		<a href="#options" data-rel="dialog" data-transition="slidedown" data-icon="gear" class="ui-btn-right">設定</a>
+	</div>
+	<div data-role="content">
+		<span id="warning"><span id="lostD">○○</span>日サボってます！<br></span>
+		今日の貯金：<span id="notyetDeposit"><a data-role="button" id="deposit" data-inline="true" data-theme="a"><span id="today">○○</span>円</a></span>
+					<span id="doneDeposit"><span id="doneToday">○○</span>円貯金しました</span>
+		<br>
+		<br>
+		これまでの貯金合計金額：<span id="total">○○</span>円<br>
+		<span class="doneStart">
+			最終貯金日：<span id="lastM"></span>月<span id="lastD"></span>日<br>
+		</span>
+		<br>
+		<hr>
+		<br>
+		貯金開始日：<span class="doneStart"><span id="dsM"></span>月<span id="dsD"></span>日（<span id="dsR"></span>日経過）</span>
+					<span id="notyetStart">まだ貯金をはじめていません</span>
+	</div>
+	<div data-role="footer">
+		<h4>
+			&copy; 2012 Yorimaru. &amp; Suzuki.
+		</h4>
+	</div>
+</div>
+<div data-role="page" id="options">
+	<div data-role="content">
+		<h3>設定</h3>
+		<a data-role="button" id="useLeapYear" data-theme="b" data-icon="check" data-iconpos="left">2月29日に貯金"する"</a>
+		<a data-role="button" id="reset" data-transition="slidedown" data-theme="b">リセット</a>
+		<a href="#main" data-role="button" id="cancel" data-rel="back" data-transition="slidedown" data-theme="a">閉じる</a>
+	</div>
+</div>
+</body></html>

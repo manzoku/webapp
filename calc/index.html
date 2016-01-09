@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=yes">
+	<title>memory calculator</title>
+	<link rel="stylesheet" href="style/all.css"></style>
+	<script src="script/jquery-2.1.1.min.js"></script>
+	<script src="script/jquery.mobile.custom.min.js"></script>
+	<script src="script/app.js"></script>
+</head>
+<body>
+	<div id="stage">
+		<div id="history-wrapper">
+			<ul id="history"></ul>
+		</div>
+		<div id="calc-wrapper">
+			<table id="calc-panel">
+				<tr>
+					<td colspan="5" id="box-formula"><span id="calc-formula"></span><span id="calc-opecode"></span></td>
+					<td class="table-col-spacer"></td>
+					<td class="table-button" id="button-m">mem</td>
+				</tr>
+				<tr class="table-row-spacer"></tr>
+				<tr>
+					<td class="calc-button table-button">7</td>
+					<td class="table-col-spacer"></td>
+					<td class="calc-button table-button">8</td>
+					<td class="table-col-spacer"></td>
+					<td class="calc-button table-button">9</td>
+					<td class="table-col-spacer"></td>
+					<td class="calc-opecode table-button">÷</td>
+				</tr>
+				<tr class="table-row-spacer"></tr>
+				<tr>
+					<td class="calc-button table-button">4</td>
+					<td class="table-col-spacer"></td>
+					<td class="calc-button table-button">5</td>
+					<td class="table-col-spacer"></td>
+					<td class="calc-button table-button">6</td>
+					<td class="table-col-spacer"></td>
+					<td class="calc-opecode table-button">×</td>
+				</tr>
+				<tr class="table-row-spacer"></tr>
+				<tr>
+					<td class="calc-button table-button">1</td>
+					<td class="table-col-spacer"></td>
+					<td class="calc-button table-button">2</td>
+					<td class="table-col-spacer"></td>
+					<td class="calc-button table-button">3</td>
+					<td class="table-col-spacer"></td>
+					<td class="calc-opecode table-button">-</td>
+				</tr>
+				<tr class="table-row-spacer"></tr>
+				<tr>
+					<td class="table-button" id="button-c">C/AC</td>
+					<td class="table-col-spacer"></td>
+					<td class="calc-button table-button">0</td>
+					<td class="table-col-spacer"></td>
+					<td class="table-button" id="button-eq">=</td>
+					<td class="table-col-spacer"></td>
+					<td class="calc-opecode table-button">+</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<hr class="row-spacer">
+</body>
+</html>

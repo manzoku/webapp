@@ -1,0 +1,83 @@
+/* タグリセット */
+a {
+	text-decoration: none;
+}
+/* /タグリセット */
+
+/* ヘッダー（jQuery Mobile リセット含む） */
+.ui-header .ui-title {
+	overflow: visible;
+	white-space: normal;
+	margin: .2em;
+	font-size: 26px;
+	color: #222;
+}
+.logo img {
+	height: 48px;
+}
+/* /ヘッダー（jQuery Mobile リセット含む） */
+
+/* リスト（jQuery Mobile リセット含む） */
+.ol-subcontent {
+	text-indent: 0!important;
+	margin-top: .5em;
+	padding-left: 1.55em;
+}
+.ui-li-desc {
+	overflow: visible;
+	white-space: normal;
+}
+/* /リスト（jQuery Mobile リセット含む） */
+
+.puzzleImage {
+	width: 100%;
+}
+
+.crosswordHint {
+	font-size: 12px;
+	font-weight: normal;
+}
+
+.center {
+	text-align: center;
+}
+.hide {
+	display: none;
+}
+
+.color-dark {
+	color: #222!important;
+}
+
+#story_body {
+	background: url("../images/witch_bg.png") right bottom no-repeat;
+}
+
+.resultbg {
+	background-position-x: center;
+	background-position-y: top;
+	background-repeat: no-repeat;
+}
+#clearbg {
+	background-image: url("../images/citybg.png");
+}
+
+.endcomment {
+	text-shadow: 1px 1px 2px #000000;
+	font-weight: bold;
+	font-size: 30pt;
+	text-align: center;
+}
+
+
+/* ナビバー用 */
+div.app-navbar li {
+	border-left: solid 2px #f17188;
+}
+.ui-navbar li .ui-btn .ui-btn-inner {
+	padding-top: .2em!important;
+	padding-bottom: .2em!important;
+}
+#remain-wrap {
+	background-color: salmon;
+}

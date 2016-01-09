@@ -1,0 +1,150 @@
+<!--
+このソースは勉強用に作っているものです。
+もし需要があるのであれば、自由に使ってください。
+その際、ソースコードの改変有無に関わらず許諾連絡は不要です。
+-->
+<!DOCTYPE html> 
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<title>AR</title>
+		<style>
+			body {
+				height: 1700px;
+			}
+			#camera {
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: -2;
+			}
+			#mark {
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: -1;
+			}
+			#capture {
+				position: absolute;
+				top: 490px;
+				left: 70px;
+				height: 30px;
+				width: 160px;
+			}
+			#resume {
+				position: absolute;
+				top: 490px;
+				left: 250px;
+				height: 30px;
+				width: 160px;
+			}
+			#temp {
+				display: none;
+			}
+			#image {
+				position: absolute;
+				top: 530px;
+				left: 0;
+			}
+			#warebox {
+				position: absolute;
+				top: 1220px;
+				left: 50px;
+			}
+			.ware {
+				position: relative;
+				width: 160px;
+			}
+		</style>
+	</head>
+	<body>
+		<video id="camera" width="640" height="480">Sorry, you're browser doesn't support video. Please try.</video>
+		<canvas id="mark" width="640" height="480">Sorry, you're browser doesn't support canvas. Please try.</canvas> 
+		<button id="capture">getCapture</button>&nbsp;&nbsp;&nbsp;&nbsp;<button id="resume">resume video</button>
+		<canvas id="temp" width="480" height="640">Sorry, you're browser doesn't support canvas. Please try.</canvas> 
+		<img id="image"><br />
+		<div id="warebox">
+			<img class="ware" id="ware1" src="ware1.png">&nbsp;&nbsp;
+			<img class="ware" id="ware2" src="ware2.png">&nbsp;&nbsp;
+			<img class="ware" id="ware3" src="ware3.png">
+		</div>
+		<script>
+			var video, playVideo, ctx, waterMark, currentWareId;
+			currentWareId = "ware1";
+
+			waterMark = new Image();
+			waterMark.addEventListener("load", function () {
+				// add mark
+				ctx.drawImage(waterMark, 80, 0);
+			});
+			waterMark.src = "mask.png";
+
+			playVideo = function() {
+				// Get the stream from the camera using getUserMedia
+				navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
+				window.URL = window.URL || window.webkitURL || window.mozURL || window.msURL;
+				if (navigator.getUserMedia) {
+					navigator.getUserMedia({video: true, toString : function() {return "video";}}, function(stream) {
+						// Success callback (Replace the source of the video element with the stream from the camera)
+						video.src = window.URL.createObjectURL(stream) || stream;
+						video.play();
+					},
+					function(error) {
+						// Error callback
+						console.error("An error occurred [CODE: " + error.code + "]");
+						alert("An error occurred [CODE: " + error.code + "]");
+					});
+				} else {
+					alert("未対応です");
+				}
+			};
+
+			video = document.getElementById("camera");
+			ctx = document.getElementById("mark").getContext("2d");
+			playVideo();
+			if (navigator.userAgent.indexOf("Android") >= 0) {
+				//document.getElementById("resume").style.display = "none";
+				alert("初めに\"resume Video\"ボタンをおして更新してください");
+			}
+
+			document.getElementById("resume").addEventListener("click", function () {
+				video.play();
+			});
+
+			document.getElementById("capture").addEventListener("click", function () {
+				video.pause();
+				setWare(currentWareId);
+			});
+
+			document.getElementById("ware1").addEventListener("click", function () {
+				currentWareId = "ware1";
+				setWare("ware1");
+			});
+
+			document.getElementById("ware2").addEventListener("click", function () {
+				currentWareId = "ware2";
+				setWare("ware2");
+			});
+
+			document.getElementById("ware3").addEventListener("click", function () {
+				currentWareId = "ware3";
+				setWare("ware3");
+			});
+
+			var setWare = function (wareId) {
+				var canvas, ctx;
+				canvas = document.getElementById("temp");
+				ctx = canvas.getContext("2d");
+				ctx.fillStyle = "rgb(255,255,255)";
+				ctx.fillRect(0,0,480,640);
+				if (navigator.userAgent.indexOf("Android") >= 0) {
+					ctx.drawImage(video, 135, 0, 210, 210);
+				} else {
+					ctx.drawImage(video, 100, 0, 280, 210);
+				}
+				ctx.drawImage(document.getElementById(wareId), 0, 160);
+				document.getElementById("image").src = canvas.toDataURL("image/jpeg");
+			};
+		</script>
+	</body>
+</html>

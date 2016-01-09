@@ -1,0 +1,52 @@
+* {
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	color: #000;
+}
+#copyright {
+	background-color: white;
+	font-size: 10px;
+	line-height: 10px;
+}
+#list {
+	list-style-type: none;
+}
+#list li+li {
+	border-top: 1px solid lightgray;
+}
+
+.pos_left {
+	float: left;
+}
+.pos_right {
+	float: right;
+}
+
+/* Smart Phone (and orientation=portrait) */
+@media(max-width:768px) and (orientation:portrait) {
+	#map {
+		width: 100vw;
+		height: 60vh;
+		float: left;
+	}
+	#listContainer {
+		height: calc(100vh - 60vh - 32px);
+		overflow-y: scroll;
+		width: 100%;
+	}
+}
+
+/* PC, Tablet */
+@media(min-width:769px), (orientation:landscape) {
+	#map {
+		width: 60vw;
+		height: calc(100vh - 15px);
+		float: left;
+	}
+	#listContainer {
+		height: calc(100vh - 15px);
+		overflow-y: scroll;
+		width: 40vw;
+	}
+}

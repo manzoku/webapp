@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="themes/colorful.min.css">
+	<link rel="stylesheet" href="css/jquery.mobile.structure-1.3.1.min.css">
+	<link rel="stylesheet" href="css/app.css">
+	<script src="js/jquery-2.0.0.min.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/jquery.mobile-1.3.1.min.js"></script>
+	<title>鳥かごからの脱出</title>
+</head>
+<body>
+	<div id="logo" data-role="page" data-theme="a">
+		<div data-role="content" class="center">
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
+			<a href="#intro" id="logoButton" class="color-dark">
+				<img src="images/logo.png" alt="鳥かごからの脱出"><br>
+				<h1>鳥かごからの脱出</h1>
+			</a>
+		</div>
+	</div>
+	<div id="intro" data-role="page" data-theme="a">
+		<div data-role="header">
+			<h1 class="logo">
+				<img src="images/logo_small.png" alt="鳥かごからの脱出">鳥かごからの脱出
+			</h1>
+		</div>
+		<div data-role="content">
+				<div data-role="collapsible" data-collapsed="false" data-inset="false" data-content-theme="f">
+					<h2>☆注意事項☆</h2>
+					<ol data-role="listview">
+						<li>
+							<span style="color:red;">トップページ以外ではリロードしないでください。</span>
+						</li>
+						<li>
+							iPhoneの場合
+							<p class="ol-subcontent">
+								ブラウザ以外がアクティブになった場合、または画面がロックされた場合にタイマーがストップすることがあります。<br>
+								その状態では時間が進まないためゲーム進行できなくなります。
+							</p>
+						</li>
+						<li>
+							まだ遊んでいない人に答えを教えないこと
+							<p class="ol-subcontent">
+								遊ぶ前に答えがわかってしまうと楽しくなくなりますよね。<br>
+								答えのわかった謎解きなど、中身の見える福袋くらいにドキドキ感がそぎ落とされてしまいます。
+							</p>
+						</li>
+						<li>
+							ゲーム開始から60分連続で遊べる状態であること
+							<p class="ol-subcontent">
+								ゲームが始まると、あなたは閉じ込められてしまうのでどこにも行けません。<br>
+								どこかへ行きたければ、脱出するしかありません。<br>
+								あと、電池も気をつけて。
+							</p>
+						</li>
+						<li>
+							ゲームを始める前に紙とペンを用意してください
+							<p class="ol-subcontent">
+								ヒントのメモや謎解きをするために使います。<br>
+								手元に用意してからはじめることをお勧めします。
+							</p>
+						</li>
+						<li>
+							何かが起こるとその情報が表示されます。
+							<p class="ol-subcontent">
+								脱出するための重要なヒントがでてきたのかもしれません。<br>
+								謎解きに集中しすぎるあまり見逃したりしないように気をつけて！<br>
+								逃したヒントは2度と現れないかもしれません。
+							</p>
+						</li>
+					</ol>
+				</div>
+				<div data-role="collapsible" data-collapsed="false" data-inset="false" data-content-theme="f">
+					<h2>準備はできましたか？</h2>
+					<a href="#story" data-role="button" data-theme="d" data-transition="slideup">ストーリーに進む</a>
+				</div>
+			</div>
+	</div>
+	<div id="story" data-role="page">
+		<div data-role="header">
+			<h1 class="logo">
+				<img src="images/logo_small.png" alt="鳥かごからの脱出">鳥かごからの脱出
+			</h1>
+		</div>
+		<div data-role="content">
+			<p id="story_body">
+				目覚めると目の前には見覚えの無い柵が！<br>
+				あたりを見渡すと、始めに見えていたのは柵ではなく、鳥かごの一部であることがわかりました。<br>
+				ふと手元を見ると、自分が鳥の姿になっているでわありませんか！！！<br>
+				<br>
+				遠くから何かが聞こえてきます。<br>
+				「今夜は鳥の丸焼きだよ。丸々と太ったウマそうな鳥を捕まえてきたからねぇ。<br>
+				あと1時間で支度をするから待ってておくれ。」<br>
+				壁の時計を見ると今は11時10分を指しています。<br>
+				<br>
+				ゲゲッ<br>
+				どうやら魔女に鳥にされてさらわれてきてしまったようです。<br>
+				このままではあなたは丸焼きにして食べられてしまいます。<br>
+				早く鍵を開けて逃げなくてわっ！<br>
+				鍵の番号は・・・部屋の中を見回すと鍵の番号らしきもののヒントがあちこちにばらまかれています。<br>
+				あなたをさらって来た魔女は忘れっぽいのかもしれません。<br>
+				<br>
+				さあ、あなたは無事逃げ出して人間に戻れるのでしょうか！？<br>
+			</p>
+			<a href="#main" id="startGame" data-role="button" data-theme="a" data-transition="fade">ゲームを始める</a><br>
+			<a href="#main" id="startHintGame" data-role="button" data-theme="a" data-transition="fade">ヒント付ゲームを始める</a><br>
+			<a href="#main" id="continueGame" data-role="button" data-theme="a" data-transition="fade">ゲームを再開する</a><br>
+			<a id="deleteGame" data-role="button" data-theme="a" data-transition="fade">セーブデータを削除する</a>
+		</div>
+	</div>
+	<div id="main" data-role="page">
+		<div data-role="header">
+			<h1 class="logo">
+				<img src="images/logo_small.png" alt="鳥かごからの脱出">鳥かごからの脱出
+			</h1>
+			<div data-role="navbar" data-iconpos="left" class="app-navbar">
+				<ul>
+					<li><a data-icon="arrow-r" id="skipbtn">Skip</a></li>
+					<li id="remain-wrap">&nbsp;&nbsp;<span id="remain">60</span>&nbsp;min.</li>
+					<li><a data-icon="edit" id="savebtn">Save</a></li>
+					<li><a data-icon="delete" id="exitbtn">Exit</a></li>
+				</ul>
+			</div>
+		</div>
+		<div data-role="content">
+			<div data-role="collapsible" data-collapsed="true" data-inset="false" data-theme="c" data-content-theme="a">
+				<h2>カゴの床</h2>
+				<img src="images/codec.jpg" class="puzzleImage" id="puzzleImage">
+			</div>
+			<div data-role="collapsible" data-collapsed="true" data-inset="false" data-theme="c" data-content-theme="a">
+				<h2>ヒントA</h2>
+				<img src="images/crossword.jpg" class="puzzleImage"><br>
+				<div data-role="collapsible" data-collapsed="true" data-corners="false" data-theme="b" data-content-theme="f">
+					<h2>タテのヒント</h2>
+					<ul data-inset="false" data-role="listview" class="crosswordHint">
+						<li>1:脳と共に中枢神経を成す</li>
+						<li>2:夏、海、竹刀、目隠しとくれば</li>
+						<li>3:生死に関わる重要なこと</li>
+						<li>4:漁は深夜に行われます</li>
+						<li>5:「赤ちゃんできたかも」</li>
+						<li>6:斜塔</li>
+						<li>7:Fe</li>
+						<li>8:長崎の麺といえばこれ</li>
+						<li>9:ゴマちゃんっていたよね</li>
+						<li>10:ネギを背負ってくるやつ</li>
+						<li>11:道庁はここ</li>
+						<li>12:お正月に門前に立ててあります</li>
+						<li>13:積み重ねて遊ぶ知育玩具</li>
+						<li>14:ドラマなどの通行人役</li>
+					</ul>
+				</div><div data-role="collapsible" data-collapsed="true" data-corners="false" data-theme="b" data-content-theme="f">
+					<h2>ヨコのヒント</h2>
+					<ul data-inset="false" data-role="listview" class="crosswordHint">
+						<li>2:尺の10分の1</li>
+						<li>6:マージャンで頭＋順子4組の両面待ち</li>
+						<li>7:消波ブロックのこと</li>
+						<li>10:運送事業の分類は旅客と郵便とあとこれ</li>
+						<li>12:海のミルク</li>
+						<li>15:英語だとKnight</li>
+						<li>16:写真や絵と共に解説を掲載した書籍</li>
+						<li>17:「○○？」⇒「今でしょ」</li>
+						<li>18:く○○おれ太郎</li>
+						<li>19:疑問は解けてなくなりました</li>
+						<li>20:魔女は英語だとこうなります</li>
+						<li>21:お灸に使います</li>
+						<li>22:お手洗いのこと</li>
+						<li>23:青森県の名産品</li>
+						<li>24:油性の整髪料</li>
+						<li>25:葉っぱはネギ、根っこはラッキョウに似ている</li>
+						<li>26:O型の人の性格はこれ？</li>
+						<li>27:黒の反対</li>
+						<li>28:きをつけ！どっち向いてる？</li>
+					</ul>
+				</div>
+			</div>
+			<div data-role="collapsible" data-collapsed="true" data-inset="false" data-theme="c" data-content-theme="a">
+				<h2>ヒントB</h2>
+				<img src="images/legs.jpg" class="puzzleImage">
+			</div>
+			<div data-role="collapsible" data-collapsed="true" data-inset="false" data-theme="c" data-content-theme="a">
+				<h2>ヒントC</h2>
+				<img src="images/english.jpg" class="puzzleImage">
+			</div>
+			<div data-role="collapsible" data-collapsed="true" data-inset="false" data-theme="c" data-content-theme="a">
+				<h2>ヒントD</h2>
+				<img src="images/trace.png" class="puzzleImage">
+			</div>
+			<div data-role="collapsible" data-collapsed="true" data-inset="false" data-theme="c" data-content-theme="a">
+				<h2>カゴの外に見えている絵</h2>
+				<img src="images/treasurekey.jpg" class="puzzleImage">
+			</div>
+			<div data-role="collapsible" data-collapsed="true" data-inset="false" data-theme="c" data-content-theme="a">
+				<h2>開錠番号</h2>
+				<img src="images/diallock.png" alt="ダイアルロック">
+				<span id="specialhint1" style="display:none">真ん中＝頭<br></span>
+				<div data-role="controlgroup" class="numberInput">
+					<label for="diallocknumber">開錠番号（4桁）</label>
+					<input type="number" data-theme="f" name="diallocknumber" id="diallocknumber" min="0" max="9999" pattern="[0-9]{4,4}" placeholder="開錠番号（4桁）">
+				</div>
+				<br>
+				<button data-theme="a" id="openlock">開錠</button>
+			</div>
+
+			<div class="hide" id="selectEscape" data-role="collapsible" data-collapsed="true" data-inset="false" data-theme="a" data-content-theme="a">
+				<h2>脱出する</h2>
+				<button id="escapeDoor">扉から脱出</button>
+				<button id="escapeWindow">小窓から脱出</button>
+			</div>
+
+			<div id="boxes" class="lateHide" data-role="collapsible" data-collapsed="true" data-inset="false" data-theme="e" data-content-theme="e">
+				<h2>小箱</h2>
+				<img id="treasurebox" src="images/treasurebox.png" alt="宝箱"><!-- お宝ざくざく　でも脱出に関係ない -->
+				<div data-role="controlgroup" class="numberInput">
+					<label for="treasureboxnumber">開錠番号（2桁）</label>
+					<input type="number" data-theme="f" name="treasureboxnumber" id="treasureboxnumber" min="0" max="99" pattern="[0-9]{2,2}" placeholder="開錠番号（2桁）">
+				</div>
+				<br>
+				<button data-theme="e" id="opentreasurebox">開錠</button>
+				<img id="medicinebox" src="images/medicinebox.png" alt="救急箱"><!-- カプセル -->
+				<div data-role="controlgroup" class="numberInput">
+					<label for="medicineboxnumber">開錠番号（2桁）</label>
+					<input type="number" data-theme="f" name="medicineboxnumber" id="medicineboxnumber" min="0" max="99" pattern="[0-9]{2,2}" placeholder="開錠番号（2桁）">
+				</div>
+				<br>
+				<button data-theme="e" id="openmedicinebox">開錠</button>
+				<img id="musicbox" src="images/musicbox.png" alt="オルゴール"><!-- 単なるオルゴール 　だから脱出に関係ない-->
+				<div data-role="controlgroup" class="numberInput">
+					<label for="musicboxnumber">開錠番号（2桁）</label>
+					<input type="number" data-theme="f" name="musicboxnumber" id="musicboxnumber" min="0" max="99" pattern="[0-9]{2,2}" placeholder="開錠番号（2桁）">
+				</div>
+				<button data-theme="e" id="openmusicbox">開錠</button>
+			</div>
+			<div class="hide" id="drag" data-role="collapsible" data-collapsed="true" data-inset="false" data-theme="e" data-content-theme="e">
+				<h2>解毒薬</h2>
+				<button id="drinkNow">飲む</button>
+				<button class="lateHide" id="capsuleIn">カプセルに入れてもっていく</button>
+			</div>
+		</div>
+	</div>
+	<div id="clear" data-role="page">
+		<div data-role="header">
+			<h1 class="logo">
+				<img src="images/logo_small.png" alt="鳥かごからの脱出">鳥かごからの脱出
+			</h1>
+		</div>
+		<div class="center" data-role="content">
+			<div class="endcomment">脱出成功！</div>
+			<div class="resultbg" id="clearbg">
+				<img id="winpose" src="images/winpose.png">
+			</div>
+			<br>
+			<br>
+			ClearTime:<span id="gametime"></span>分
+			<br>
+			<br>
+			<button class="exit" data-theme="a">ゲーム終了</button>
+			<br>
+			<br>
+			<button class="sendMessage" data-theme="a">メッセージを送る</button>
+		</div>
+	</div>
+	<div id="gameover" data-role="page">
+		<div data-role="header">
+			<h1 class="logo">
+				<img src="images/logo_small.png" alt="鳥かごからの脱出">鳥かごからの脱出
+			</h1>
+		</div>
+		<div class="center" data-role="content">
+			<div class="endcomment">脱出失敗↓</div>
+			<div class="resultbg" id="gameoverbg">
+				<img id="gameoverimage" src="images/roastedchicken.png" alt="脱出失敗">
+			</div>
+			<br>
+			<span id="gameovermessage"></span>
+			<br>
+			<br>
+			<button class="exit" data-theme="a">ゲーム終了</button>
+			<br>
+			<br>
+			<button class="sendMessage" data-theme="a">メッセージを送る</button>
+		</div>
+	</div>
+	<div id="message" data-role="page">
+		<div data-role="header">
+			<h1 class="logo">
+				<img src="images/logo_small.png" alt="鳥かごからの脱出">鳥かごからの脱出
+			</h1>
+		</div>
+		<div class="center" data-role="content">
+			いただいたメッセージは今後の活動のために大いに参考にさせていただきます！<br>
+			<br>
+			<a href="mailto:su.soft.support+efb@gmail.com?subject=[鳥かごからの脱出]メッセージ" target="_blank">メッセージを送信（メーラー起動します）</a><br><br>
+			上記リンクがうまく働かない場合は「su.soft.support+efb@gmail.com」まで直接どーぞ。<br>
+			<br>
+			メールでの送信となるため、送信元バレが心配な場合は捨てアドなどでも。<br>
+			<br>
+			<br>
+			<button class="exit" data-theme="a">ゲーム終了</button>
+		</div>
+	</div>
+</body>
+</html>
